@@ -1,0 +1,173 @@
+       Q1 - Pandas Series
+
+
+1. How to create Series with nd array
+
+	import pandas as pd
+	import numpy as np 
+	arr=np.array([10,15,18,22])
+	s = pd.Series(arr)
+	print(s)
+	
+2. How to create Series with Mutable index
+
+        import pandas as pd
+        import numpy as np
+        arr=np.array(['a','b','c','d'])
+        s=pd.Series(arr,
+        index=['first','second','third','fourth'])
+        print(s)
+
+3. Creating a series from a Dictionary
+
+  	import pandas as pd
+ 	 d = {'Name' : 'Hardik', 'Iplteam' : 'MI', 'Runs' : 1500}
+ 	 s=pd.Series(d)
+  	print(s)
+
+4. Print all the values of the Series by multiplying them by 2.
+
+  	 import pandas as pd
+  	 s=pd.Series([1,2,3,4,5])
+  	 print('multiply values by 2 in a series')
+   	print(s*2)
+
+5. Print Square of all the values of the series.
+
+	import pandas as pd
+	s=pd.Series([1,2,3,4,5])
+	print('square of all values  in a series')
+	print(s**2)
+	
+6. Print all the values of the Series that are greater than2
+
+	import pandas as pd
+	s=pd.Series([1,2,3,4,5])
+	print(' all values greater than 2  in a series')
+	print(s[s>2])
+
+7. Addition of two series
+
+	import pandas as pd
+	s1=pd.Series([1,2,3,4,5],index=['a','b','c','d','e'])
+	s2=pd.Series([10,20,30,40,50],index=['a','b','c','d','e'])
+	s3=pd.Series([5,14,23,32],index=['a','b','c','d',])
+	print('To add series1 & series1')
+	print(s1+s2)
+	print('To add series2 & series3')
+	print(s2+s3)
+	print('To add series2 & series3 and fill non matching index with 0')
+	print(s2.add(s3,fill_value=0))
+
+8. Print the first and last 5 elements of a series
+
+	import pandas as pd
+	import numpy as np
+	arr=np.array([10,20,30,40,50])
+	s=pd.Series(arr)
+	print(s.head())
+	print(s.head(5))
+
+	import pandas as pd
+	import numpy as np
+	arr=np.array([10,20,30,40,50])
+	s=pd.Series(arr)
+	print(s.tail())
+	print(s.tail(5))
+
+9. Print the values from index 0 to 5
+	import pandas as pd
+	import numpy as np
+	arr=np.array([10,20,30,40,50])
+	s=pd.Series(arr)
+	print(s)
+	print(s[0:5])
+	
+10. Selection Using loc, iloc index label
+
+	import pandas as pd
+	import numpy as np
+	arr=np.array([10,20,30,40,50])
+	s=pd.Series(arr)
+	print(s)
+	print(s.loc[:2])
+	print(s.loc[3:4])
+	s.loc[2:3]
+
+	import pandas as pd
+	import numpy as np
+	arr=np.array([10,20,30,40,50])
+	s=pd.Series(arr)
+	print(s)
+	print(s.iloc[:2])
+	print(s.iloc[3:4])
+	s.iloc[2:3]
+
+11. Retrieve subsets of data using slicing
+
+	import pandas as pd
+	import numpy as np
+	arr=np.array([10,15,20,25,30,35])
+	s=pd.Series(arr,index=['A','B','C','D','E','F'])
+	print(s)
+	print(s[1:5:2])
+	print(s[0:6:2])
+
+     Q2 Dataframe
+
+1. create Dataframe From Series
+
+	import pandas as pd
+	s = pd.Series(['a','b','c','d'])
+	df=pd.DataFrame(s)
+	print(df)
+
+2. DataFrame from List of Dictionaries
+
+	import pandas as pd
+	l = [{'Name':'Sachin','SirName' : 'Bav'},
+   	     {'Name':'Vimal','SirName' : 'Kumar'}]
+	df=pd.DataFrame(l)
+	print(df)
+
+3. Display the first 5 rows of data frame
+      
+
+	import pandas as pd
+	empdata = {'empid':[1,2,3,4,5,6],
+                   'ename':['Vimal','Sachin','Bav','Kumar','Ravy','Sunil']}
+	df=pd.DataFrame(empdata)
+	print(df)
+	print(df.head(5))
+
+4. Select the last two columns of the data frame
+
+        import pandas as pd
+	empdata = {'empid':[1,2,3,4,5,6],
+      		   'ename':['Vimal','Sachin','Bav','Kumar','Ravy','Sunil']}
+	df=pd.DataFrame(empdata)
+	print(df)
+	df.loc[0:5]
+	print(df.tail(2))
+
+5. Add two data frames
+
+6. Demonstrate deletion, and renaming of columns
+7. Demonstrate concat, Merge operations in data frame
+8. Write a Pandas program to join the two given dataframes along rows and
+assign all data
+Test Data:
+student_data1:
+student_id name marks
+0 S1 Danniella Fenton 200
+1 S2 Ryder Storey 210
+2 S3 Bryce Jensen 190
+3 S4 Ed Bernal 222
+4 S5 Kwame Morin 199
+student_data2:
+student_id name marks
+0 S4 Scarlette Fisher 201
+1 S5 Carla Williamson 200
+2 S6 Dante Morse 198
+3 S7 Kaiser William 219
+4 S8 Madeeha Preston 201
